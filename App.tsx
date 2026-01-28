@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Features from './components/Features';
@@ -24,6 +25,7 @@ const App: React.FC = () => {
 
   return (
     <div className="relative min-h-screen">
+      <Analytics />
       <Header onEstimateClick={openModal} />
       <main>
         <section id="home">
