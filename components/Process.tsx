@@ -63,7 +63,7 @@ const Process: React.FC<ProcessProps> = ({ onEstimateClick }) => {
             Stop worrying about leaks and cowboy contractors. Get the professional results you deserve.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:5551234567" className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all shadow-xl shadow-red-900/30">
+            <a href="tel:5555555555" className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all shadow-xl shadow-red-900/30">
               CALL NOW
             </a>
             <button 

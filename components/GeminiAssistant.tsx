@@ -26,19 +26,30 @@ const GeminiAssistant: React.FC = () => {
     setIsTyping(true);
 
     try {
-      // Fix: Follow guidelines by creating a new instance right before use and using process.env.API_KEY directly
+      if (!process.env.API_KEY) {
+        throw new Error("API Key missing");
+      }
+
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
-      // Fix: Use the chat API to maintain history and system instructions correctly
       const chat = ai.chats.create({
         model: 'gemini-3-flash-preview',
         config: {
-          systemInstruction: `You are a professional, friendly assistant for Maxx Roofing. 
-          Your goal is to answer homeowner questions about roofing technical details, leak signs, and shingle types. 
-          Keep answers concise and professional. 
-          Always emphasize that while you can provide information, a professional on-site inspection from Maxx Roofing is the only way to be sure. 
-          If a user asks about pricing, explain that it varies by material and square footage, and suggest they book a free estimate via the form on the site.
-          The company name is Maxx Roofing. They do repairs, replacements, and gutters.`,
+          systemInstruction: `You are the Lead Qualification Assistant for Maxx Roofing.
+          Your tone is: Professional, local, reassuring, and expert.
+          
+          Knowledge Base:
+          - Services: Full replacements, minor repairs, leak detection, gutter installation.
+          - Materials: Premium architectural shingles (lasting 50+ years).
+          - Selling Points: Free estimates within 48 hours, clean job sites, local crews.
+          
+          Rules:
+          1. Answer technical questions concisely.
+          2. If asked about price, explain it varies by square footage and material, then suggest a FREE ESTIMATE.
+          3. Emphasize that a physical inspection is required for accuracy.
+          4. If the user seems ready to book, tell them to click the "FREE ESTIMATE" button on the screen.
+          5. Keep responses under 3 sentences where possible.
+          6. If providing a contact number, always use 555-555-5555.`,
         },
         history: messages.map(m => ({
           role: m.role,
@@ -47,10 +58,11 @@ const GeminiAssistant: React.FC = () => {
       });
 
       const response = await chat.sendMessage({ message: userMessage });
-      const text = response.text || "I'm sorry, I'm having trouble connecting right now. Please call us at (555) 123-4567 for immediate assistance.";
+      const text = response.text || "I'm having trouble connecting. Please call us at 555-555-5555.";
       setMessages(prev => [...prev, { role: 'model', text }]);
     } catch (error) {
-      setMessages(prev => [...prev, { role: 'model', text: "I'm having a technical glitch, but we are still here to help! Please call our office." }]);
+      console.error("Gemini Error:", error);
+      setMessages(prev => [...prev, { role: 'model', text: "I'm experiencing a technical connection issue. For immediate assistance, please call our office at 555-555-5555." }]);
     } finally {
       setIsTyping(false);
     }

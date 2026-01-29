@@ -53,7 +53,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ isModal = false }) => {
             <input 
               required
               type="tel" 
-              placeholder="(555) 000-0000"
+              placeholder="555-555-5555"
               className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-red-600 focus:ring-2 focus:ring-red-100 outline-none transition-all" 
             />
           </div>

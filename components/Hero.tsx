@@ -37,10 +37,10 @@ const Hero: React.FC<HeroProps> = ({ onEstimateClick }) => {
               GET A FREE ESTIMATE
             </button>
             <a 
-              href="tel:5551234567" 
+              href="tel:5555555555" 
               className="bg-white/10 backdrop-blur hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded font-bold text-lg text-center transition-all"
             >
-              CALL (555) 123-4567
+              CALL 555-555-5555
             </a>
           </div>
 

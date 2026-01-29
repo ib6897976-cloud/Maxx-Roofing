@@ -3,22 +3,22 @@ import React from 'react';
 
 const reviews = [
   {
-    name: 'John Doe',
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: 'David Thompson',
+    text: "Found hidden leaks three other companies missed. They fixed them properly and stayed until the job was finished. Extremely professional communication throughout.",
     stars: 5,
     tag: 'Leak Repair'
   },
   {
-    name: 'Jane Doe',
-    text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    name: 'Sarah Jenkins',
+    text: "They showed up exactly when they said they would. Worked hard and efficiently. Left the site cleaner than it was when they started! Truly went above and beyond.",
     stars: 5,
     tag: 'Full Replacement'
   },
   {
-    name: 'Jebediah Doe',
-    text: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+    name: 'Mike Peterson',
+    text: "Fixed a storm-damaged vent boot immediately without excuses. Professional scheduling and fair pricing. Best contractor experience I've had in years.",
     stars: 5,
-    tag: 'Roof Repair'
+    tag: 'Vent Repair'
   }
 ];
 

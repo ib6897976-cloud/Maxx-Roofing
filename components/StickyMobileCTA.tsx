@@ -9,7 +9,7 @@ const StickyMobileCTA: React.FC<StickyMobileCTAProps> = ({ onEstimateClick }) =>
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-4 bg-white/80 backdrop-blur-md border-t border-slate-100 flex gap-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
       <a 
-        href="tel:5551234567" 
+        href="tel:5555555555" 
         className="flex-1 bg-slate-900 text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2"
       >
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

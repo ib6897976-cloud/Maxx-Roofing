@@ -60,7 +60,7 @@ const App: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900">Call Us Anytime</h4>
-                      <p className="text-slate-600 font-medium">(555) 123-4567</p>
+                      <p className="text-slate-600 font-medium">555-555-5555</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
